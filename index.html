@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Blue Retreat
+</title>
+
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+
+</head>
+
+
+<body>
+
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="logo-circle">
+            LKA
+        </div>
+
+        <div class="badge">
+            BLUE RETREAT
+        </div>
+
+        <h1>
+            โรงเรียนหลวงพ่อปานคลองด่านอนุสรณ์
+        </h1>
+
+        <p>
+            โหวตการแต่งกายยอดเยี่ยม
+        </p>
+
+    </div>
+
+</header>
+
+
+<nav class="main-nav">
+
+
+    <button
+        class="nav-btn active"
+        data-page="home"
+        onclick="showPage('home')"
+    >
+        🏠 หน้าแรก
+    </button>
+
+
+    <button
+        class="nav-btn"
+        data-page="register"
+        onclick="showPage('register')"
+    >
+        🏆 ลงทะเบียนผู้เข้าประกวด
+    </button>
+
+
+    <button
+        class="nav-btn"
+        data-page="vote"
+        onclick="showPage('vote')"
+    >
+        🗳️ โหวต
+    </button>
+
+
+    <button
+        class="nav-btn"
+        data-page="report"
+        onclick="showPage('report')"
+    >
+        📊 รายงานผลโหวต
+    </button>
+
+
+</nav>
+
+
+<main class="container">
+
+
+<!-- =================================================
+     HOME
+================================================= -->
+
+<section
+    id="page-home"
+    class="page"
+>
+
+    <div class="welcome-card">
+
+        <span>
+            ✨ ยินดีต้อนรับ ✨
+        </span>
+
+        <h2>
+            Blue Retreat Voting
+        </h2>
+
+        <p>
+            ระบบลงทะเบียนและโหวต
+            การแต่งกายยอดเยี่ยม
+        </p>
+
+    </div>
+
+
+    <div class="home-grid">
+
+
+        <button
+            class="home-card register-home"
+            onclick="showPage('register')"
+        >
+
+            <div class="home-icon">
+                🏆
+            </div>
+
+            <h3>
+                ลงทะเบียนผู้เข้าประกวด
+            </h3>
+
+            <p>
+                สมัครเข้าร่วม
+                การประกวดการแต่งกาย
+            </p>
+
+            <span>
+                เริ่มลงทะเบียน →
+            </span>
+
+        </button>
+
+
+        <button
+            class="home-card vote-home"
+            onclick="showPage('vote')"
+        >
+
+            <div class="home-icon">
+                🗳️
+            </div>
+
+            <h3>
+                โหวตการแต่งกายยอดเยี่ยม
+            </h3>
+
+            <p>
+                ใช้สิทธิ์โหวต
+                ฝ่ายชายและฝ่ายหญิง
+            </p>
+
+            <span>
+                เข้าสู่ระบบโหวต →
+            </span>
+
+        </button>
+
+
+    </div>
+
+
+    <div class="rule-card">
+
+        <h3>
+            📌 กติกาการโหวต
+        </h3>
+
+        <ul>
+
+            <li>
+                ผู้มีสิทธิ์ 1 คน
+                สามารถโหวตฝ่ายชายได้ 1 คน
+            </li>
+
+            <li>
+                ผู้มีสิทธิ์ 1 คน
+                สามารถโหวตฝ่ายหญิงได้ 1 คน
+            </li>
+
+            <li>
+                ไม่สามารถโหวตซ้ำ
+                ในประเภทเดิมได้
+            </li>
+
+            <li>
+                เมื่อยืนยันคะแนนแล้ว
+                ไม่สามารถเปลี่ยนแปลงได้
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     REGISTER
+================================================= -->
+
+<section
+    id="page-register"
+    class="page hidden"
+>
+
+    <div class="section-title">
+
+        <span>
+            CANDIDATE REGISTRATION
+        </span>
+
+        <h2>
+            🏆 ลงทะเบียนผู้เข้าประกวด
+        </h2>
+
+        <p>
+            กรอกข้อมูลเพื่อเข้าร่วมการประกวด
+        </p>
+
+    </div>
+
+
+    <div class="form-card">
+
+
+        <label>
+            ประเภท
+        </label>
+
+
+        <select
+            id="registerType"
+            class="input"
+        >
+
+            <option value="">
+                -- เลือกประเภท --
+            </option>
+
+            <option value="ชาย">
+                👨 ชาย
+            </option>
+
+            <option value="หญิง">
+                👩 หญิง
+            </option>
+
+        </select>
+
+
+        <label>
+            ชื่อเล่น
+        </label>
+
+
+        <input
+            id="registerNickname"
+            class="input"
+            type="text"
+            maxlength="50"
+            placeholder="กรอกชื่อเล่น"
+        >
+
+
+        <div class="id-preview">
+
+            <small>
+                รหัสผู้สมัครจะถูกสร้างอัตโนมัติ
+            </small>
+
+            <strong id="candidateIdPreview">
+                M-LKA-0001
+            </strong>
+
+        </div>
+
+
+        <button
+            class="btn"
+            onclick="registerCandidate()"
+        >
+
+            🏆 ลงทะเบียนผู้เข้าประกวด
+
+        </button>
+
+
+    </div>
+
+
+    <div class="notice">
+
+        <strong>
+            หมายเหตุ
+        </strong>
+
+        <br>
+
+        ระบบจะสร้างรหัสผู้สมัครอัตโนมัติ
+        โดยไม่สามารถกำหนดรหัสเองได้
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     VOTE
+================================================= -->
+
+<section
+    id="page-vote"
+    class="page hidden"
+>
+
+
+    <div
+        id="voteGroupStep"
+        class="form-card"
+    >
+
+        <div class="section-title">
+
+            <span>
+                STEP 01
+            </span>
+
+            <h2>
+                🗳️ เข้าสู่ระบบโหวต
+            </h2>
+
+            <p>
+                เลือกกลุ่มสาระฯ / แผนงาน
+            </p>
+
+        </div>
+
+
+        <label>
+            กลุ่มสาระฯ / แผนงาน
+        </label>
+
+
+        <select
+            id="groupSelect"
+            class="input"
+        >
+
+            <option value="">
+                -- กำลังโหลด --
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div
+        id="voterStep"
+        class="form-card hidden"
+    >
+
+        <div class="section-title">
+
+            <span>
+                STEP 02
+            </span>
+
+            <h2>
+                👤 เลือกผู้มีสิทธิ์
+            </h2>
+
+            <p>
+                รูปแบบ: รหัส | ชื่อ-นามสกุล
+            </p>
+
+        </div>
+
+
+        <label>
+            ผู้มีสิทธิ์โหวต
+        </label>
+
+
+        <select
+            id="voterSelect"
+            class="input"
+        >
+
+            <option value="">
+                -- เลือกผู้มีสิทธิ์ --
+            </option>
+
+        </select>
+
+
+        <button
+            id="loginButton"
+            class="btn"
+        >
+
+            เข้าสู่ระบบโหวต →
+
+        </button>
+
+    </div>
+
+
+    <div
+        id="votingArea"
+        class="hidden"
+    >
+
+
+        <div class="profile-card">
+
+            <div class="profile-avatar">
+                👤
+            </div>
+
+
+            <div>
+
+                <small>
+                    ผู้มีสิทธิ์โหวต
+                </small>
+
+
+                <h2 id="voterName">
+                    -
+                </h2>
+
+
+                <p id="voterGroup">
+                    -
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="status-card">
+
+            <h3>
+                📊 สถานะการใช้สิทธิ์
+            </h3>
+
+
+            <div class="status-grid">
+
+
+                <div
+                    id="maleStatus"
+                    class="status-box"
+                >
+
+                    <span>
+                        👨
+                    </span>
+
+                    <strong>
+                        ฝ่ายชาย
+                    </strong>
+
+                    <small>
+                        ยังไม่ได้ใช้สิทธิ์
+                    </small>
+
+                </div>
+
+
+                <div
+                    id="femaleStatus"
+                    class="status-box"
+                >
+
+                    <span>
+                        👩
+                    </span>
+
+                    <strong>
+                        ฝ่ายหญิง
+                    </strong>
+
+                    <small>
+                        ยังไม่ได้ใช้สิทธิ์
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="typeSelection"
+            class="form-card"
+        >
+
+            <div class="section-title">
+
+                <h2>
+                    เลือกประเภทการโหวต
+                </h2>
+
+            </div>
+
+
+            <div class="type-grid">
+
+
+                <button
+                    class="type-card male"
+                    onclick="openCandidates('ชาย')"
+                >
+
+                    <span>
+                        👨
+                    </span>
+
+                    <strong>
+                        ฝ่ายชาย
+                    </strong>
+
+                    <small>
+                        โหวตได้ 1 คน
+                    </small>
+
+                </button>
+
+
+                <button
+                    class="type-card female"
+                    onclick="openCandidates('หญิง')"
+                >
+
+                    <span>
+                        👩
+                    </span>
+
+                    <strong>
+                        ฝ่ายหญิง
+                    </strong>
+
+                    <small>
+                        โหวตได้ 1 คน
+                    </small>
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="candidateSection"
+            class="form-card hidden"
+        >
+
+            <div class="candidate-heading">
+
+
+                <button
+                    onclick="backToType()"
+                    class="back-btn"
+                >
+                    ←
+                </button>
+
+
+                <div>
+
+                    <span
+                        id="candidateTypeLabel"
+                    >
+                        -
+                    </span>
+
+                    <h2>
+                        เลือกผู้เข้าประกวด
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="candidateGrid"
+                class="candidate-grid"
+            >
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     REPORT
+================================================= -->
+
+<section
+    id="page-report"
+    class="page hidden"
+>
+
+
+    <div
+        id="reportLogin"
+        class="form-card"
+    >
+
+        <div class="section-title">
+
+            <span>
+                ADMIN REPORT
+            </span>
+
+            <h2>
+                🔐 รายงานผลโหวต
+            </h2>
+
+            <p>
+                กรุณากรอกรหัสผ่านผู้ดูแลระบบ
+            </p>
+
+        </div>
+
+
+        <label>
+            รหัสผ่าน
+        </label>
+
+
+        <input
+            id="adminPassword"
+            class="input"
+            type="password"
+            placeholder="กรอกรหัสผ่าน"
+            autocomplete="off"
+            onkeydown="
+                if(event.key === 'Enter'){
+                    loadReport();
+                }
+            "
+        >
+
+
+        <button
+            class="btn"
+            onclick="loadReport()"
+        >
+
+            🔓 เข้าดูรายงานผล
+
+        </button>
+
+    </div>
+
+
+    <div
+        id="reportArea"
+        class="hidden"
+    >
+
+
+        <div class="section-title">
+
+            <span>
+                VOTING REPORT
+            </span>
+
+            <h2>
+                📊 รายงานผลโหวต
+            </h2>
+
+            <p id="reportUpdated">
+                -
+            </p>
+
+        </div>
+
+
+        <div class="report-summary">
+
+
+            <div class="summary-card">
+
+                <span>
+                    🗳️
+                </span>
+
+                <small>
+                    คะแนนทั้งหมด
+                </small>
+
+                <strong id="totalVotes">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card male-summary">
+
+                <span>
+                    👨
+                </span>
+
+                <small>
+                    คะแนนฝ่ายชาย
+                </small>
+
+                <strong id="maleVotes">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card female-summary">
+
+                <span>
+                    👩
+                </span>
+
+                <small>
+                    คะแนนฝ่ายหญิง
+                </small>
+
+                <strong id="femaleVotes">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="report-card">
+
+            <div class="report-title male-title">
+
+                <span>
+                    👨
+                </span>
+
+                <div>
+
+                    <small>
+                        MALE
+                    </small>
+
+                    <h2>
+                        ผลโหวตฝ่ายชาย
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="maleReport"
+                class="result-list"
+            >
+            </div>
+
+        </div>
+
+
+        <div class="report-card">
+
+            <div class="report-title female-title">
+
+                <span>
+                    👩
+                </span>
+
+                <div>
+
+                    <small>
+                        FEMALE
+                    </small>
+
+                    <h2>
+                        ผลโหวตฝ่ายหญิง
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="femaleReport"
+                class="result-list"
+            >
+            </div>
+
+        </div>
+
+
+        <button
+            class="btn"
+            onclick="refreshReport()"
+        >
+
+            🔄 อัปเดตผลโหวต
+
+        </button>
+
+
+        <button
+            class="btn"
+            style="
+                background:#edf4f4;
+                color:#31545a;
+            "
+            onclick="logoutReport()"
+        >
+
+            🔒 ออกจากรายงาน
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<div
+    id="loading"
+    class="loading hidden"
+>
+
+    <div class="spinner"></div>
+
+    <p>
+        กำลังดำเนินการ...
+    </p>
+
+</div>
+
+
+<div
+    id="modal"
+    class="modal hidden"
+>
+
+    <div class="modal-box">
+
+
+        <div
+            id="modalIcon"
+            class="modal-icon"
+        >
+            ✓
+        </div>
+
+
+        <h2
+            id="modalTitle"
+        >
+            -
+        </h2>
+
+
+        <div
+            id="modalMessage"
+        >
+            -
+        </div>
+
+
+        <div
+            id="modalActions"
+            class="modal-actions"
+        >
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <strong>
+        BLUE RETREAT
+    </strong>
+
+    <br>
+
+    กลุ่มบริหารงานบุคคล โรงเรียนหลวงพ่อปานคลองด่านอนุสรณ์
+
+</footer>
+
+
+<script src="config.js"></script>
+
+<script src="app.js"></script>
+
+
+</body>
+
+</html>
